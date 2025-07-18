@@ -1,0 +1,13 @@
+[project]
+name = "chinchilla"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.116.1",
+    "pandas>=2.3.1",
+    "pandera>=0.25.0",
+    "pydantic>=2.11.7",
+    "pykafka>=2.8.0",
+]
