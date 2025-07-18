@@ -6,8 +6,6 @@ from src.business.send_transaction_to_kafka import send_transaction_to_kafka
 from src.models.single.Transaction import Transaction
 from pandas.errors import InvalidIndexError
 
-
-
 def app():
     while True:
         index: int = 0
@@ -15,7 +13,14 @@ def app():
             transaction: Transaction = get_transaction_to_send(index)
         except InvalidIndexError:
             break
+
         send_transaction_to_kafka(transaction)
+        if round(random.uniform(0, 10), 0) == 5:
+            time.sleep(0.1)
+            send_transaction_to_kafka(transaction)
         index += 1
         random_wait: float = round(random.uniform(0.01, 60), 2)
         time.sleep(random_wait)
+
+if __name__ == "__main__":
+    app()
