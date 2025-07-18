@@ -1,10 +1,11 @@
 import time
 import random
+
+from src.business.get_transaction_to_send import get_transaction_to_send
+from src.business.send_transaction_to_kafka import send_transaction_to_kafka
 from src.models.single.Transaction import Transaction
-from src.something.get_transaction_to_send import get_transaction_to_send
 from pandas.errors import InvalidIndexError
 
-from src.something.send_transaction_to_kafka import send_transaction_to_kafka
 
 
 def app():
